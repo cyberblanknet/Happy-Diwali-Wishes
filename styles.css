@@ -1,0 +1,203 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --primary-color: #ff6b6b;
+    --secondary-color: #ffdd57;
+    --background-color: #fff7e6;
+    --text-color: #4b2e1a;
+    --glow-color1: #ff6b6b;
+    --glow-color2: #ffdd57;
+    --glow-color3: #51cf66;
+    --glow-color4: #339af0;
+    --wish-glow-color: #ffb347;
+}
+
+body {
+    background-color: var(--background-color);
+    color: var(--text-color);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+}
+
+.container {
+    text-align: center;
+    padding: 20px;
+    border-radius: 10px;
+    position: relative;
+    z-index: 1;
+    opacity: 0;
+    animation: fadeIn 1s forwards, slideIn 1s forwards;
+}
+
+.diwali-text {
+    font-size: 3rem;
+    font-weight: bold;
+    color: var(--primary-color);
+    margin-bottom: 20px;
+    animation: multiGlow 2s ease-in-out infinite alternate, bounce 1s infinite;
+}
+
+.message {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: var(--text-color);
+    text-shadow: 0 0 5px var(--wish-glow-color), 0 0 10px var(--wish-glow-color), 0 0 15px var(--wish-glow-color);
+    animation: wishGlow 1.5s ease-in-out infinite alternate;
+    margin-bottom: 20px;
+}
+
+.toggle-button {
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    background: linear-gradient(45deg, #ff6b6b, #ffdd57, #66c3ff, #51cf66);
+    color: white;
+    font-weight: bold;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    animation: buttonBounce 1s infinite alternate;
+}
+
+.toggle-button:hover {
+    transform: scale(1.1);
+    animation: buttonPulse 0.5s infinite alternate;
+}
+
+@keyframes buttonBounce {
+    0% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-5px);
+    }
+    100% {
+        transform: translateY(0);
+    }
+}
+
+@keyframes buttonPulse {
+    0% {
+        transform: scale(1);
+    }
+    100% {
+        transform: scale(1.05);
+    }
+}
+
+@keyframes multiGlow {
+    0% {
+        text-shadow: 0 0 10px var(--glow-color1), 0 0 20px var(--glow-color2), 0 0 30px var(--glow-color1), 0 0 40px var(--glow-color2);
+    }
+    25% {
+        text-shadow: 0 0 10px var(--glow-color2), 0 0 20px var(--glow-color3), 0 0 30px var(--glow-color2), 0 0 40px var(--glow-color3);
+    }
+    50% {
+        text-shadow: 0 0 10px var(--glow-color3), 0 0 20px var(--glow-color4), 0 0 30px var(--glow-color3), 0 0 40px var(--glow-color4);
+    }
+    75% {
+        text-shadow: 0 0 10px var(--glow-color4), 0 0 20px var(--glow-color1), 0 0 30px var(--glow-color4), 0 0 40px var(--glow-color1);
+    }
+    100% {
+        text-shadow: 0 0 10px var(--glow-color1), 0 0 20px var(--glow-color2), 0 0 30px var(--glow-color1), 0 0 40px var(--glow-color2);
+    }
+}
+
+@keyframes wishGlow {
+    from {
+        text-shadow: 0 0 5px var(--wish-glow-color), 0 0 10px var(--wish-glow-color), 0 0 15px var(--wish-glow-color);
+    }
+    to {
+        text-shadow: 0 0 10px var(--wish-glow-color), 0 0 15px var(--wish-glow-color), 0 0 20px var(--wish-glow-color);
+    }
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(-50px);
+    }
+    to {
+        transform: translateY(0);
+    }
+}
+
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+body.theme1 {
+    --background-color: #fff7e6;
+    --text-color: #4b2e1a;
+    --primary-color: #ff6b6b;
+    --secondary-color: #ffdd57;
+}
+
+body.theme2 {
+    --background-color: #e0f7fa;
+    --text-color: #00695c;
+    --primary-color: #00796b;
+    --secondary-color: #ffcc80;
+}
+
+body.theme3 {
+    --background-color: #e1bee7;
+    --text-color: #4a148c;
+    --primary-color: #ab47bc;
+    --secondary-color: #ffeb3b;
+}
+
+body.theme4 {
+    --background-color: #ffecb3;
+    --text-color: #f57f17;
+    --primary-color: #ff9800;
+    --secondary-color: #d32f2f;
+}
+
+body.theme5 {
+    --background-color: #d1c4e9;
+    --text-color: #3e2723;
+    --primary-color: #7e57c2;
+    --secondary-color: #ff7043;
+}
+
+body.theme6 {
+    --background-color: #b2ebf2;
+    --text-color: #004d40;
+    --primary-color: #26c6da;
+    --secondary-color: #ffb300;
+}
+
+body.dark-light {
+    background-color: rgba(0, 0, 0, 0.8);
+    color: rgba(255, 255, 255, 0.8);
+}
+
+@media (max-width: 600px) {
+    .diwali-text {
+        font-size: 2.5rem;
+    }
+    .message {
+        font-size: 1.2rem;
+    }
+}
